@@ -24,7 +24,10 @@ export default function App() {
             alt="Seyon Tech Logo"
             className="logo-img"
           />
-          <div className="logo-text">SEYON TECH</div>
+          <a href="#home">
+          <button className="logo-text">SEYON TECH</button>
+          </a>
+
         </div>
 
         {/* CENTER: Links */}
