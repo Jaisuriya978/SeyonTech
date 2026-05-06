@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck, BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3, TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout, MessageSquare, ZoomIn, Settings, Rocket, LineChart, CheckCircle, Zap, Cpu, Award } from 'lucide-react';
 import { FaLinkedin } from "react-icons/fa";
 import "./App.css";
+import heroVideo from "./assets/hero.mp4";
 const logos = [
   "https://assets.hackquest.io/hackathons/projects/logo/5dC0Uoq5pEk7Uluy3Brm6.png",
   "https://nexusgen.io/wp-content/uploads/2024/06/V1-BP-NexusGen_Full_Color_Logo-1.png.webp",
@@ -24,11 +25,11 @@ const Counter = ({ end, suffix = "" }) => {
     <span ref={ref}>
       {inView ? (
         /* Ensure CountUp is used as a component here */
-        <CountUp 
-          start={0} 
-          end={end} 
-          duration={2.5} 
-          suffix={suffix} 
+        <CountUp
+          start={0}
+          end={end}
+          duration={2.5}
+          suffix={suffix}
         />
       ) : (
         `0${suffix}`
@@ -49,9 +50,7 @@ export default function App() {
             alt="Seyon Tech Logo"
             className="logo-img"
           />
-          <a href="#home">
-            <button className="btn-secondary">SEYON TECH</button>
-          </a>
+
 
         </div>
 
@@ -75,15 +74,8 @@ export default function App() {
 
       <section className="hero-container" id="home">
         {/* 1. Background Video Element */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="hero-bg-video"
-        >
-          <source src="https://www.pexels.com/download/video/34953670/" type="video/mp4" />
-          Video
+        <video autoPlay loop muted playsInline className="hero-bg-video">
+          <source src={heroVideo} type="video/mp4" />
         </video>
 
         {/* 2. The Dark Overlay (Now with a slight gradient for readability) */}
@@ -482,6 +474,8 @@ export default function App() {
         </div>
       </section>
 
+
+
       {/* PROCESS SECTION */}
       <section className="process" id="process">
         <div className="process-header">
@@ -617,7 +611,7 @@ export default function App() {
         </div>
       </section>
 
-      
+
 
 
 
@@ -677,24 +671,72 @@ export default function App() {
         </div>
       </section>
 
-      {/* FOOTER */}
+
+
+      {/* UPGRADED FOOTER SECTION */}
       <footer className="footer">
+        {/* Decorative background glow */}
+        <div className="footer-glow"></div>
+
         <div className="footer-container">
-
-          <div className="footer-left">
-            <h3>Seyon Tech</h3>
-            <p>Helping businesses grow with AI-powered digital solutions.</p>
+          {/* Column 1: Brand & Bio */}
+          <div className="footer-brand">
+            <h3 className="footer-logo">SEYON <span className="text-gradient">TECH</span></h3>
+            <p className="footer-description">
+              Digital Media Solutions that drive real results. We help businesses generate leads, automate sales, and scale with proven marketing strategies..
+            </p>
+            <div className="footer-socials">
+              <a href="https://www.linkedin.com/company/seyon-technology-digital-solutions/" target="_blank" rel="noopener noreferrer" className="social-link">
+                <FaLinkedin size={20} />
+              </a>
+              <a href="https://wa.me/918610499770" target="_blank" rel="noopener noreferrer" className="social-link">
+                <MessageSquare size={20} />
+              </a>
+              {/* Add more icons as needed */}
+            </div>
           </div>
 
-          <div className="footer-contact">
-            <p>Email: info@seyontech.com</p>
-            <p>Phone: +91-86104 99770</p>
+          {/* Column 2: Navigation */}
+          <div className="footer-nav">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#industries">Industries</a></li>
+              <li><a href="#process">Our Process</a></li>
+              <li><a href="#results">Results</a></li>
+            </ul>
           </div>
 
+          {/* Column 3: Contact Details */}
+          <div className="footer-contact-info">
+            <h4>Get in Touch</h4>
+            <div className="contact-item">
+              <h3>Email :</h3>
+              <p>info@seyontech.com</p>
+            </div>
+            <div className="contact-item">
+              <h3>Phone :</h3>
+              <p>+91 86104 99770</p>
+            </div>
+            <div className="contact-item">
+              <h3>Address:</h3>
+              <p>Khivraj Building, Thousand Lights West,Thousand Lights, Chennai - 06</p>
+            </div>
+          </div>
         </div>
 
+        {/* Bottom Copyright Area */}
         <div className="footer-bottom">
-          © {new Date().getFullYear()} Seyon Tech. All rights reserved.
+          <div className="footer-divider"></div>
+          <div className="footer-bottom-content">
+            <p>© {new Date().getFullYear()} Seyon Tech Digital Media Solutions. All rights reserved.</p>
+            <div className="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Careers</a>
+            </div>
+          </div>
         </div>
       </footer>
 
