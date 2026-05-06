@@ -1,5 +1,7 @@
 import React from "react";
-import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck, BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3, TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout, MessageSquare, ZoomIn, Settings, Rocket, LineChart } from 'lucide-react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck, BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3, TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout, MessageSquare, ZoomIn, Settings, Rocket, LineChart, CheckCircle, Zap, Cpu, Award } from 'lucide-react';
 import { FaLinkedin } from "react-icons/fa";
 import "./App.css";
 const logos = [
@@ -11,6 +13,29 @@ const logos = [
   "https://pbs.twimg.com/profile_images/704034344726167552/pc02wf2p_400x400.jpg",
   "https://media.licdn.com/dms/image/v2/C560BAQGNo9jzDPp5qw/company-logo_200_200/company-logo_200_200/0/1631307632499?e=2147483647&v=beta&t=9LO2mhivYzYLBz52lO7xlIPhZoeaZuDM-eArYUoXGD4",
 ];
+
+const Counter = ({ end, suffix = "" }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  return (
+    <span ref={ref}>
+      {inView ? (
+        /* Ensure CountUp is used as a component here */
+        <CountUp 
+          start={0} 
+          end={end} 
+          duration={2.5} 
+          suffix={suffix} 
+        />
+      ) : (
+        `0${suffix}`
+      )}
+    </span>
+  );
+};
 
 export default function App() {
   return (
@@ -25,7 +50,7 @@ export default function App() {
             className="logo-img"
           />
           <a href="#home">
-          <button className="btn-secondary">SEYON TECH</button>
+            <button className="btn-secondary">SEYON TECH</button>
           </a>
 
         </div>
@@ -41,7 +66,7 @@ export default function App() {
 
         {/* RIGHT: Button */}
         <a href="#contact">
-        <button className="btn">Get Started</button>
+          <button className="btn">Get Started</button>
         </a>
       </header>
 
@@ -85,7 +110,7 @@ export default function App() {
           {/* CTA Buttons */}
           <div className="hero-btns fade-up delay-3">
             <a href="#contact">
-            <button className="btn-secondary">Let's Talk →</button>
+              <button className="btn-secondary">Let's Talk →</button>
             </a>
             <a href="#process">
               <button className="btn-secondary">View Our Work</button>
@@ -118,7 +143,7 @@ export default function App() {
             We combine proven digital marketing strategies with advanced automation technology to deliver measurable results. From paid advertising to AI chatbots and complete funnel development, we provide end-to-end solutions that transform your marketing efforts into a predictable revenue engine..
           </p>
           <a href="#services">
-          <button className="btn btn-primary">Let’s Connect</button>
+            <button className="btn btn-primary">Let’s Connect</button>
           </a>
         </div>
       </section>
@@ -464,7 +489,7 @@ export default function App() {
         </div>
 
         <div className="process-header text-center">
-          
+
           <h2>How We Work</h2>
         </div>
 
@@ -528,6 +553,72 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      <section className="results-section" id="results">
+        <div className="container">
+          <div className="results-header">
+            <div className="header-left">
+              <h2>OUR <span className="text-gradient">RESULTS</span></h2>
+            </div>
+            <div className="header-right">
+              <p>Tangible results, not empty claims — we build efficient AI tools that scale, optimize, and save valuable hours.</p>
+            </div>
+          </div>
+
+          <div className="results-grid">
+            {/* Project Success */}
+            <div className="result-card">
+              <div className="result-content">
+                <span className="result-number">150+</span>
+                <h4>Project success</h4>
+                <p>Delivered across 20+ countries—from startups to top corporations.</p>
+              </div>
+              <div className="result-icon-bg">
+                <CheckCircle size={80} />
+              </div>
+            </div>
+
+            {/* Client Efficiency */}
+            <div className="result-card">
+              <div className="result-content">
+                <span className="result-number">100%</span>
+                <h4>Client efficiency</h4>
+                <p>Clients reporting enhanced efficiency with our custom strategies.</p>
+              </div>
+              <div className="result-icon-bg">
+                <Zap size={80} />
+              </div>
+            </div>
+
+            {/* AI Innovation */}
+            <div className="result-card">
+              <div className="result-content">
+                <span className="result-number">300+</span>
+                <h4>AI innovation</h4>
+                <p>Hours spent crafting smart AI tools to optimize workflows across industries.</p>
+              </div>
+              <div className="result-icon-bg">
+                <Cpu size={80} />
+              </div>
+            </div>
+
+            {/* Industry Recognition */}
+            <div className="result-card">
+              <div className="result-content">
+                <span className="result-number">75+</span>
+                <h4>Industry recognition</h4>
+                <p>Recognized for design, tech, and sustainability—past five years.</p>
+              </div>
+              <div className="result-icon-bg">
+                <Award size={80} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
 
 
       {/* CONTACT SECTION */}
