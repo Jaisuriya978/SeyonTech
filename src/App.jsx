@@ -28,7 +28,6 @@ const logos = [
   );
 };
 
-  
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
