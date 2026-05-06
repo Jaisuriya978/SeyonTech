@@ -1,10 +1,11 @@
 import React from "react";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 import { useInView } from 'react-intersection-observer';
 import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck, BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3, TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout, MessageSquare, ZoomIn, Settings, Rocket, LineChart, CheckCircle, Zap, Cpu, Award } from 'lucide-react';
 import { FaLinkedin } from "react-icons/fa";
 import "./App.css";
 import heroVideo from "./assets/hero.mp4";
+import { motion } from "framer-motion";
 const logos = [
   "https://assets.hackquest.io/hackathons/projects/logo/5dC0Uoq5pEk7Uluy3Brm6.png",
   "https://nexusgen.io/wp-content/uploads/2024/06/V1-BP-NexusGen_Full_Color_Logo-1.png.webp",
@@ -102,10 +103,10 @@ export default function App() {
           {/* CTA Buttons */}
           <div className="hero-btns fade-up delay-3">
             <a href="#contact">
-              <button className="btn-secondary">Let's Talk →</button>
+              <button className="btn-primary-outlined">Let's Talk →</button>
             </a>
             <a href="#process">
-              <button className="btn-secondary">View Our Work</button>
+              <button className="btn-primary-outlined">View Our Work</button>
             </a>
           </div>
         </div>
@@ -181,8 +182,8 @@ export default function App() {
           <div className="service-card interactive">
             <div className="card-inner">
               <div className="card-top">
-                <div className="icon-box purple">
-                  <Bot size={32} />
+                <div className="icon-box blue">
+                  <Bot size={50} />
                 </div>
                 <h3>AI Automation Marketing</h3>
                 <p className="main-desc">
@@ -207,7 +208,7 @@ export default function App() {
             <div className="card-inner">
               <div className="card-top">
                 <div className="icon-box blue">
-                  <Target size={32} />
+                  <Target size={50} />
                 </div>
                 <h3>Paid Ads Management</h3>
                 <p className="main-desc">Data-driven advertising campaigns that deliver measurable ROI.</p>
@@ -229,8 +230,8 @@ export default function App() {
           <div className="service-card interactive">
             <div className="card-inner">
               <div className="card-top">
-                <div className="icon-box orange">
-                  <Share2 size={32} />
+                <div className="icon-box blue">
+                  <Share2 size={50} />
                 </div>
                 <h3>Social Media Marketing</h3>
                 <p className="main-desc">Build a powerful brand presence across all social platforms.</p>
@@ -252,8 +253,8 @@ export default function App() {
           <div className="service-card interactive">
             <div className="card-inner">
               <div className="card-top">
-                <div className="icon-box green">
-                  <Layout size={32} />
+                <div className="icon-box blue">
+                  <Layout size={50} />
                 </div>
                 <h3>Website & Funnels</h3>
                 <p className="main-desc">High-converting systems that turn visitors into customers.</p>
@@ -284,8 +285,8 @@ export default function App() {
         <div className="why-choose-grid">
           {/* AI Strategy */}
           <div className="why-card">
-            <div className="why-icon-box purple">
-              <BrainCircuit size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <BrainCircuit size={40} />
             </div>
             <h3>AI-Based Strategy</h3>
             <p>We use AI-driven insights to maximize your marketing performance</p>
@@ -299,8 +300,8 @@ export default function App() {
 
           {/* Dedicated Support */}
           <div className="why-card">
-            <div className="why-icon-box blue">
-              <Headset size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <Headset size={40} />
             </div>
             <h3>Dedicated Support</h3>
             <p>We stay with you at every step of your growth journey</p>
@@ -314,8 +315,8 @@ export default function App() {
 
           {/* Funnel Setup */}
           <div className="why-card">
-            <div className="why-icon-box orange">
-              <Filter size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <Filter size={40} />
             </div>
             <h3>Complete Funnel Setup</h3>
             <p>We build systems that convert visitors into paying customers</p>
@@ -329,8 +330,8 @@ export default function App() {
 
           {/* Mobile CRM */}
           <div className="why-card">
-            <div className="why-icon-box green">
-              <Smartphone size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <Smartphone size={40} />
             </div>
             <h3>Mobile CRM Access</h3>
             <p>Manage your leads anytime, anywhere with ease</p>
@@ -344,8 +345,8 @@ export default function App() {
 
           {/* Scalable Automation */}
           <div className="why-card">
-            <div className="why-icon-box pink">
-              <RefreshCw size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <RefreshCw size={40} />
             </div>
             <h3>Scalable Automation</h3>
             <p>Systems designed to grow with your business without extra workload</p>
@@ -359,8 +360,8 @@ export default function App() {
 
           {/* Reporting */}
           <div className="why-card">
-            <div className="why-icon-box yellow">
-              <BarChart3 size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <BarChart3 size={40} />
             </div>
             <h3>Transparent Reporting</h3>
             <p>Know exactly where your money goes and what you get</p>
@@ -374,8 +375,8 @@ export default function App() {
 
           {/* Data Growth */}
           <div className="why-card">
-            <div className="why-icon-box cyan">
-              <TrendingUp size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <TrendingUp size={40} />
             </div>
             <h3>Data-Driven Growth</h3>
             <p>Every decision is backed by real performance data and analytics</p>
@@ -389,8 +390,8 @@ export default function App() {
 
           {/* Affordable Pricing */}
           <div className="why-card">
-            <div className="why-icon-box violet">
-              <CircleDollarSign size={28} />
+            <div className="why-icon-box #8b5cf6">
+              <CircleDollarSign size={40} />
             </div>
             <h3>Affordable Pricing</h3>
             <p>Premium services without premium pricing</p>
@@ -405,70 +406,86 @@ export default function App() {
 
       </section>
 
-      {/* INDUSTRIES WE SERVE */}
+
+
       <section className="industries" id="industries">
         <div className="industries-header">
-          <h2 className="fade-up">Industries We are Serves</h2>
-          <p className="fade-up delay-1">
-            Tailored marketing and automation solutions for every business type
-          </p>
+          <h2 className="fade-up">Industries We Serve</h2>
+          <p className="fade-up delay-1">Tailored marketing and automation solutions across diverse sectors</p>
         </div>
 
         <div className="industries-grid">
-
-          <div className="industries-grid">
-            <div className="industry-card">
-              <div className="industry-icon-wrapper blue">
-                <GraduationCap size={32} />
+          {/* 1. Education */}
+          <div className="industry-card education-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <GraduationCap size={40} />
               </div>
               <h3>Educational Institutions</h3>
               <p>Schools, colleges, and training centers</p>
-              <div className="card-bg-glow"></div>
             </div>
+          </div>
 
-            <div className="industry-card">
-              <div className="industry-icon-wrapper orange">
-                <Building2 size={32} />
+          {/* 2. Real Estate */}
+          <div className="industry-card realestate-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <Building2 size={40} />
               </div>
               <h3>Real Estate</h3>
-              <p>Property developers and agents</p>
-              <div className="card-bg-glow"></div>
+              <p>Property developers and agencies</p>
             </div>
+          </div>
 
-            <div className="industry-card">
-              <div className="industry-icon-wrapper green">
-                <Stethoscope size={32} />
+          {/* 3. Healthcare */}
+          <div className="industry-card healthcare-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <Stethoscope size={40} />
               </div>
               <h3>Healthcare Clinics</h3>
-              <p>Hospitals, clinics, and wellness centers</p>
-              <div className="card-bg-glow"></div>
+              <p>Hospitals and wellness centers</p>
             </div>
+          </div>
 
-            <div className="industry-card">
-              <div className="industry-icon-wrapper purple">
-                <Vote size={32} />
+          {/* 4. Political */}
+          <div className="industry-card political-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <Vote size={40} />
               </div>
               <h3>Political Campaigns</h3>
-              <p>Election campaigns and public relations</p>
-              <div className="card-bg-glow"></div>
+              <p>Election strategy and outreach</p>
             </div>
+          </div>
 
-            <div className="industry-card">
-              <div className="industry-icon-wrapper yellow">
-                <Store size={32} />
+          {/* 5. Local Business */}
+          <div className="industry-card local-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <Store size={40} />
               </div>
               <h3>Local Businesses</h3>
-              <p>Small & Medium shops and local startups</p>
-              <div className="card-bg-glow"></div>
+              <p>Small shops and local startups</p>
             </div>
+          </div>
 
-            <div className="industry-card">
-              <div className="industry-icon-wrapper violet">
-                <UserCheck size={32} />
+          {/* 6. Personal Brand */}
+          <div className="industry-card personal-bg">
+            <div className="industry-overlay"></div>
+            <div className="industry-card-inner">
+              <div className="industry-icon-wrapper #8b5cf6">
+                <UserCheck size={40} />
               </div>
               <h3>Personal Brands</h3>
               <p>Influencers, coaches, and consultants</p>
-              <div className="card-bg-glow"></div>
+
+
             </div>
           </div>
         </div>
@@ -478,72 +495,70 @@ export default function App() {
 
       {/* PROCESS SECTION */}
       <section className="process" id="process">
-        <div className="process-header">
 
-        </div>
+
+
 
         <div className="process-header text-center">
-
-          <h2>How We Work</h2>
+          <h2>
+            How We <span className="text-gradient">Work</span>
+          </h2>
+          <p className="process-sub">
+            A proven 5-step process that transforms your marketing and drives consistent results
+          </p>
         </div>
 
-        <div className="process-timeline">
-          {/* Decorative Connecting Line (Desktop) */}
-          <div className="timeline-connector"></div>
+        {/* TOP ICON LINE */}
+        <div className="process-line">
+          <div className="line"></div>
 
-          <div className="process-item">
-            <div className="process-node purple">
-              <MessageSquare size={24} />
-              <span className="step-number">01</span>
-            </div>
-            <div className="process-info">
-              <h4>Free Strategy Consultation</h4>
-              <p>We understand your business goals, audience, and challenges</p>
-            </div>
+          <div className="circle">
+            <MessageSquare size={40} />
+          </div>
+          <div className="circle">
+            <ZoomIn size={40} />
+          </div>
+          <div className="circle">
+            <Settings size={40} />
+          </div>
+          <div className="circle">
+            <Rocket size={40} />
+          </div>
+          <div className="circle">
+            <LineChart size={40} />
+          </div>
+        </div>
+
+        {/* CARDS */}
+        <div className="process-cards">
+          <div className="process-card">
+            <span>01</span>
+            <h4>Free Strategy Consultation</h4>
+            <p>We start with a detailed discussion to understand your business goals and challenges.</p>
           </div>
 
-          <div className="process-item">
-            <div className="process-node blue">
-              <ZoomIn size={24} />
-              <span className="step-number">02</span>
-            </div>
-            <div className="process-info">
-              <h4>Business Analysis</h4>
-              <p>Deep market research and competitor analysis</p>
-            </div>
+          <div className="process-card">
+            <span>02</span>
+            <h4>Business Analysis</h4>
+            <p>Deep market research and competitor analysis to identify opportunities.</p>
           </div>
 
-          <div className="process-item">
-            <div className="process-node orange">
-              <Settings size={24} />
-              <span className="step-number">03</span>
-            </div>
-            <div className="process-info">
-              <h4>Campaign & Funnel Setup</h4>
-              <p>We build your complete marketing infrastructure</p>
-            </div>
+          <div className="process-card">
+            <span>03</span>
+            <h4>Campaign and Funnel Setup</h4>
+            <p>We build your complete marketing infrastructure including automation.</p>
           </div>
 
-          <div className="process-item">
-            <div className="process-node green">
-              <Rocket size={24} />
-              <span className="step-number">04</span>
-            </div>
-            <div className="process-info">
-              <h4>Launch & Optimize</h4>
-              <p>Campaigns go live with continuous monitoring</p>
-            </div>
+          <div className="process-card">
+            <span>04</span>
+            <h4>Launch and Optimization</h4>
+            <p>Campaigns go live with continuous monitoring and optimization.</p>
           </div>
 
-          <div className="process-item">
-            <div className="process-node violet">
-              <LineChart size={24} />
-              <span className="step-number">05</span>
-            </div>
-            <div className="process-info">
-              <h4>Tracking & Support</h4>
-              <p>Ongoing lead management to maximize conversions</p>
-            </div>
+          <div className="process-card">
+            <span>05</span>
+            <h4>Tracking and Support</h4>
+            <p>Ongoing lead tracking and sales support to maximize conversions.</p>
           </div>
         </div>
       </section>
@@ -565,10 +580,10 @@ export default function App() {
               <div className="result-content">
                 <span className="result-number">150+</span>
                 <h4>Project success</h4>
-                <p>Delivered across 20+ countries—from startups to top corporations.</p>
+                <p>Delivered across 20+ countries from startups to top corporations.</p>
               </div>
               <div className="result-icon-bg">
-                <CheckCircle size={80} />
+                <CheckCircle size={60} />
               </div>
             </div>
 
@@ -580,7 +595,7 @@ export default function App() {
                 <p>Clients reporting enhanced efficiency with our custom strategies.</p>
               </div>
               <div className="result-icon-bg">
-                <Zap size={80} />
+                <Zap size={60} />
               </div>
             </div>
 
@@ -592,7 +607,7 @@ export default function App() {
                 <p>Hours spent crafting smart AI tools to optimize workflows across industries.</p>
               </div>
               <div className="result-icon-bg">
-                <Cpu size={80} />
+                <Cpu size={60} />
               </div>
             </div>
 
@@ -601,10 +616,10 @@ export default function App() {
               <div className="result-content">
                 <span className="result-number">75+</span>
                 <h4>Industry recognition</h4>
-                <p>Recognized for design, tech, and sustainability—past five years.</p>
+                <p>Recognized for design, tech, and sustainability at past five years.</p>
               </div>
               <div className="result-icon-bg">
-                <Award size={80} />
+                <Award size={60} />
               </div>
             </div>
           </div>
