@@ -16,27 +16,31 @@ const logos = [
   "https://media.licdn.com/dms/image/v2/C560BAQGNo9jzDPp5qw/company-logo_200_200/company-logo_200_200/0/1631307632499?e=2147483647&v=beta&t=9LO2mhivYzYLBz52lO7xlIPhZoeaZuDM-eArYUoXGD4",
 ];
 
-const Counter = ({ end, suffix = "" }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
 
+  const Counter = ({ end, suffix = "" }) => {
   return (
-    <span ref={ref}>
-      {inView ? (
-        /* Ensure CountUp is used as a component here */
-        <CountUp
-          start={0}
-          end={end}
-          duration={2.5}
-          suffix={suffix}
-        />
-      ) : (
-        `0${suffix}`
-      )}
-    </span>
+    <CountUp
+      start={0}
+      end={end}
+      duration={2.5}
+      suffix={suffix}
+    />
   );
+};
+
+  
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0 }
+};
+
+const staggerContainer = {
+  visible: {
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
 };
 
 export default function App() {
@@ -563,69 +567,52 @@ export default function App() {
         </div>
       </section>
 
+
+
       <section className="results-section" id="results">
         <div className="container">
+
+          {/* HEADER */}
           <div className="results-header">
-            <div className="header-left">
-              <h2>OUR <span className="text-gradient">RESULTS</span></h2>
-            </div>
-            <div className="header-right">
-              <p>Tangible results, not empty claims — we build efficient AI tools that scale, optimize, and save valuable hours.</p>
-            </div>
+            <h2>
+              OUR <span className="text-gradient">RESULTS</span>
+            </h2>
+            <p>
+              Tangible results, not empty claims — we build efficient AI tools that scale,
+              optimize, and save valuable hours.
+            </p>
           </div>
 
+          {/* CARDS */}
           <div className="results-grid">
-            {/* Project Success */}
+
             <div className="result-card">
-              <div className="result-content">
-                <span className="result-number">150+</span>
-                <h4>Project success</h4>
-                <p>Delivered across 20+ countries from startups to top corporations.</p>
-              </div>
-              <div className="result-icon-bg">
-                <CheckCircle size={60} />
-              </div>
+              <h3>150+</h3>
+              <h4>Project success</h4>
+              <p>Delivered across 20+ countries—from startups to top corporations.</p>
             </div>
 
-            {/* Client Efficiency */}
             <div className="result-card">
-              <div className="result-content">
-                <span className="result-number">100%</span>
-                <h4>Client efficiency</h4>
-                <p>Clients reporting enhanced efficiency with our custom strategies.</p>
-              </div>
-              <div className="result-icon-bg">
-                <Zap size={60} />
-              </div>
+              <h3>100%</h3>
+              <h4>Client efficiency</h4>
+              <p>Clients reporting enhanced efficiency with our custom strategies.</p>
             </div>
 
-            {/* AI Innovation */}
             <div className="result-card">
-              <div className="result-content">
-                <span className="result-number">300+</span>
-                <h4>AI innovation</h4>
-                <p>Hours spent crafting smart AI tools to optimize workflows across industries.</p>
-              </div>
-              <div className="result-icon-bg">
-                <Cpu size={60} />
-              </div>
+              <h3>300+</h3>
+              <h4>AI innovation</h4>
+              <p>Hours spent crafting smart AI tools to optimize workflows.</p>
             </div>
 
-            {/* Industry Recognition */}
             <div className="result-card">
-              <div className="result-content">
-                <span className="result-number">75+</span>
-                <h4>Industry recognition</h4>
-                <p>Recognized for design, tech, and sustainability at past five years.</p>
-              </div>
-              <div className="result-icon-bg">
-                <Award size={60} />
-              </div>
+              <h3>75+</h3>
+              <h4>Industry recognition</h4>
+              <p>Recognized for design, tech, and sustainability.</p>
             </div>
+
           </div>
         </div>
       </section>
-
 
 
 
