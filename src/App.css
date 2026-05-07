@@ -2832,18 +2832,12 @@ html {
 }
 
 .results-section {
-  padding: 100px 8%;
+  padding: 80px 8%;
   background: #020617;
   color: white;
-}
-
-.results-section {
-  padding: 80px 8%;
-}
-
-.results-section {
+  
   display: block !important;
-  opacity: 1 !important;
+  opacity: 2 !important;
   visibility: visible !important;
 }
 

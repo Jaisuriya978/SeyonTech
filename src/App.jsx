@@ -1,11 +1,16 @@
 import React from "react";
 import CountUp from "react-countup";
-import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck, BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3, TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout, MessageSquare, ZoomIn, Settings, Rocket, LineChart, CheckCircle, Zap, Cpu, Award } from 'lucide-react';
-import { FaLinkedin } from "react-icons/fa";
+
 import "./App.css";
 import heroVideo from "./assets/hero.mp4";
-import { motion } from "framer-motion";
+import {
+  GraduationCap, Building2, Stethoscope, Vote, Store, UserCheck,
+  BrainCircuit, Headset, Filter, Smartphone, RefreshCw, BarChart3,
+  TrendingUp, CircleDollarSign, Bot, Target, Share2, Layout,
+  MessageSquare, ZoomIn, Settings, Rocket, LineChart, CheckCircle,
+  Zap, Cpu, Award
+} from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 const logos = [
   "https://assets.hackquest.io/hackathons/projects/logo/5dC0Uoq5pEk7Uluy3Brm6.png",
   "https://nexusgen.io/wp-content/uploads/2024/06/V1-BP-NexusGen_Full_Color_Logo-1.png.webp",
@@ -17,29 +22,10 @@ const logos = [
 ];
 
 
-  const Counter = ({ end, suffix = "" }) => {
-  return (
-    <CountUp
-      start={0}
-      end={end}
-      duration={2.5}
-      suffix={suffix}
-    />
-  );
-};
 
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0 }
-};
-
-const staggerContainer = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
+const Counter = ({ end, suffix = "" }) => {
+  return <span>{end}{suffix}</span>;
 };
 
 export default function App() {
@@ -571,7 +557,7 @@ export default function App() {
       <section className="results-section" id="results">
         <div className="container">
 
-          {/* HEADER */}
+
           <div className="results-header">
             <h2>
               OUR <span className="text-gradient">RESULTS</span>
@@ -582,29 +568,30 @@ export default function App() {
             </p>
           </div>
 
-          {/* CARDS */}
+
+
           <div className="results-grid">
 
             <div className="result-card">
-              <h3>150+</h3>
+              <h3><Counter end={150} suffix="+" /></h3>
               <h4>Project success</h4>
               <p>Delivered across 20+ countries—from startups to top corporations.</p>
             </div>
 
             <div className="result-card">
-              <h3>100%</h3>
+              <h3><Counter end={100} suffix="%" /></h3>
               <h4>Client efficiency</h4>
               <p>Clients reporting enhanced efficiency with our custom strategies.</p>
             </div>
 
             <div className="result-card">
-              <h3>300+</h3>
+              <h3><Counter end={300} suffix="+" /></h3>
               <h4>AI innovation</h4>
               <p>Hours spent crafting smart AI tools to optimize workflows.</p>
             </div>
 
             <div className="result-card">
-              <h3>75+</h3>
+              <h3><Counter end={75} suffix="+" /></h3>
               <h4>Industry recognition</h4>
               <p>Recognized for design, tech, and sustainability.</p>
             </div>
